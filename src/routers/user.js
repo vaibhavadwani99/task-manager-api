@@ -171,8 +171,10 @@ router.patch("/users/me", auth, async (req, res) => {
 })
 
 
+const storage = multer.memoryStorage()
 const upload = multer({
     // dest: "avatar",
+
 
     limits: {
 
@@ -184,7 +186,8 @@ const upload = multer({
         }
 
         cb(undefined, true)
-    }
+    },
+    storage: storage
 })
 
 

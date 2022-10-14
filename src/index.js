@@ -1,12 +1,5 @@
-const express = require('express')
-require('./db/mongoose')
+const app = require('./app')
 
-
-const userRouter = require('./routers/user')
-const taskRouter = require('./routers/task')
-
-
-const app = express()
 const port = process.env.PORT || 3000
 
 app.listen(port, () => {
@@ -27,7 +20,7 @@ app.listen(port, () => {
 
 // })
 
-app.use(express.json())
+// app.use(express.json())
 // above tells that whatever data is being received parse it and convert it into javascript object
 
 
@@ -42,15 +35,15 @@ app.use(express.json())
 
 // express provides us with all the methods of http
 
-app.use(userRouter)
-app.use(taskRouter)
+// app.use(userRouter)
+// app.use(taskRouter)
 //
 // without middleware: new request -> run route handler
 //
 // with middleware : new request -> do something(function that runs) -> run route handler
 
 
-const jwt = require("jsonwebtoken")
+// const jwt = require("jsonwebtoken")
 
 
 // BASIC STRUCTURE OF HOW BCRYPT WORKS
